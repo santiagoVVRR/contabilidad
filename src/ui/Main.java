@@ -25,7 +25,5 @@ public class Main extends Application{
 		ControllerClass contr = loader.getController();
 		contr.initialize();
 		primaryStage.show();
-		
 	}
-
 }
