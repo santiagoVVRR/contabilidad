@@ -11,8 +11,11 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
+import model.Transacciones;
 
 public class ControllerClass {
+
+	private Transacciones transacciones;
 
 	@FXML
 	private ResourceBundle resources;
@@ -114,13 +117,47 @@ public class ControllerClass {
 			uno.setVisible(false);
 			dos.setVisible(false);
 
-			setLabels();
+			periodo.setText(period.getText());
+			periodo1.setText(period.getText());
+			nombreEmpresa1.setText(name.getText());
+			nombreEmpresa.setText(name.getText());
 		}
 	}
 
 	@FXML
 	void agregar(ActionEvent event) {
-
+		if (nombre.getText() == null || valor.getText() == null || nombre.getText().equalsIgnoreCase("")
+				|| valor.getText().equalsIgnoreCase("") || tipo.getItems().isEmpty() || tipo == null) {
+			Alert info = new Alert(AlertType.ERROR);
+			info.setTitle("ERROR");
+			info.setHeaderText(null);
+			info.initStyle(StageStyle.UTILITY);
+			info.setContentText("please select a valid values");
+			info.show();
+		} else {
+			try {
+				double value = Integer.parseInt(valor.getText());
+				transacciones.addTransaction(value, tipo.getValue(), nombre.getText());
+				
+				Alert info = new Alert(AlertType.INFORMATION);
+				info.setTitle("ADDED");
+				info.setHeaderText(null);
+				info.initStyle(StageStyle.UTILITY);
+				info.setContentText("the transaction has been added");
+				info.show();
+				
+			} catch (NumberFormatException e) {
+				Alert info = new Alert(AlertType.ERROR);
+				info.setTitle("ERROR");
+				info.setHeaderText(null);
+				info.initStyle(StageStyle.UTILITY);
+				info.setContentText("The value must be a number");
+				info.show();
+			}
+		}
+		
+		valor.setText("");
+		nombre.setText("");
 	}
 
 	@FXML
@@ -160,12 +197,7 @@ public class ControllerClass {
 		tres.setVisible(false);
 		cuatro.setVisible(false);
 		cinco.setVisible(false);
-	}
 
-	private void setLabels() {
-		periodo.setText(period.getText());
-		periodo1.setText(period.getText());
-		nombreEmpresa1.setText(name.getText());
-		nombreEmpresa.setText(name.getText());
+		transacciones = new Transacciones();
 	}
 }
