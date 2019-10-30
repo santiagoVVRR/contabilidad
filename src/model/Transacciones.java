@@ -80,12 +80,72 @@ public class Transacciones {
 				}
 			}
 		} else if (type.equalsIgnoreCase("pasivo")) {
-
+			if(pasivo.isEmpty()) {
+				pasivo.add(temp);
+			}else {
+				boolean is = false;
+				for(int i = 0; i < pasivo.size() && !is; i++) {
+					if(name.equalsIgnoreCase(pasivo.get(i).getNombre())) {
+						is = true;
+						double v = pasivo.get(i).getValor() + value;
+						pasivo.get(i).setValor(v);
+					}
+				}
+				if(!is) {
+					pasivo.add(temp);
+				}
+			}
+			
 		} else if (type.equalsIgnoreCase("patrimonio")) {
+			if(patrimonio.isEmpty()) {
+				patrimonio.add(temp);
+			}else {
+				boolean is = false;
+				for(int i = 0; i < patrimonio.size() && !is; i++) {
+					if(name.equalsIgnoreCase(patrimonio.get(i).getNombre())) {
+						is = true;
+						double v = patrimonio.get(i).getValor() + value;
+						patrimonio.get(i).setValor(v);
+					}
+				}
+				if(!is) {
+					patrimonio.add(temp);
+				}
+			}
 
 		} else if (type.equalsIgnoreCase("ingreso")) {
+			if(ingreso.isEmpty()) {
+				ingreso.add(temp);
+			}else {
+				boolean is = false;
+				for(int i = 0; i < ingreso.size() && !is; i++) {
+					if(name.equalsIgnoreCase(ingreso.get(i).getNombre())) {
+						is = true;
+						double v = ingreso.get(i).getValor() + value;
+						ingreso.get(i).setValor(v);
+					}
+				}
+				if(!is) {
+					ingreso.add(temp);
+				}
+			}
 
 		} else if (type.equalsIgnoreCase("gasto")) {
+			if(gasto.isEmpty()) {
+				gasto.add(temp);
+			}else {
+				boolean is = false;
+				for(int i = 0; i < gasto.size() && !is; i++) {
+					if(name.equalsIgnoreCase(gasto.get(i).getNombre())) {
+						is = true;
+						double v = gasto.get(i).getValor() + value;
+						gasto.get(i).setValor(v);
+					}
+				}
+				if(!is) {
+					gasto.add(temp);
+				}
+			}
 
 		}
 	}
