@@ -59,6 +59,8 @@ public class Transacciones {
 		this.gasto = gasto;
 	}
 
+	
+	
 	public void addTransaction(double value, String type, String name) {
 		Cuenta temp = new Cuenta(name, value);
 

@@ -17,74 +17,99 @@ public class ControllerClass {
 
 	private Transacciones transacciones;
 
-	@FXML
-	private ResourceBundle resources;
 
-	@FXML
-	private URL location;
+    @FXML
+    private ResourceBundle resources;
 
-	@FXML
-	private TextField nombre;
+    @FXML
+    private URL location;
 
-	@FXML
-	private TextField valor;
+    @FXML
+    private Label tres;
 
-	@FXML
-	private ComboBox<String> tipo;
+    @FXML
+    private Label cuatro;
 
-	@FXML
-	private Label act;
+    @FXML
+    private Label cinco;
 
-	@FXML
-	private Label pas;
+    @FXML
+    private TextField nombre;
 
-	@FXML
-	private Label periodo1;
+    @FXML
+    private TextField valor;
 
-	@FXML
-	private Label est;
+    @FXML
+    private ComboBox<String> tipo;
 
-	@FXML
-	private Label nombreEmpresa;
+    @FXML
+    private Label act;
 
-	@FXML
-	private Label periodo;
+    @FXML
+    private Label pas;
 
-	@FXML
-	private Button add;
+    @FXML
+    private Label labelAct;
 
-	@FXML
-	private Label bal;
+    @FXML
+    private Label labelPas;
 
-	@FXML
-	private Label nombreEmpresa1;
+    @FXML
+    private Label pat;
 
-	@FXML
-	private TextField name;
+    @FXML
+    private Label labelPat;
 
-	@FXML
-	private TextField period;
+    @FXML
+    private Label est;
 
-	@FXML
-	private Button finish;
+    @FXML
+    private Label nombreEmpresa;
 
-	@FXML
-	private Button addInf;
+    @FXML
+    private Label periodo;
 
-	@FXML
-	private Label dos;
+    @FXML
+    private Label ing;
 
-	@FXML
-	private Label uno;
+    @FXML
+    private Label gas;
 
-	@FXML
-	private Label tres;
+    @FXML
+    private Label labelIng;
 
-	@FXML
-	private Label cuatro;
+    @FXML
+    private Label labelGas;
 
-	@FXML
-	private Label cinco;
+    @FXML
+    private Button add;
+
+    @FXML
+    private TextField name;
+
+    @FXML
+    private Label dos;
+
+    @FXML
+    private Label uno;
+
+    @FXML
+    private TextField period;
+
+    @FXML
+    private Label bal;
+
+    @FXML
+    private Label nombreEmpresa1;
+
+    @FXML
+    private Button finish;
+
+    @FXML
+    private Button addInf;
+
+    @FXML
+    private Label periodo1;
 
 	@FXML
 	void AgregarInfo(ActionEvent event) {
@@ -158,6 +183,7 @@ public class ControllerClass {
 		
 		valor.setText("");
 		nombre.setText("");
+		finish.setVisible(true);
 	}
 
 	@FXML
@@ -166,11 +192,19 @@ public class ControllerClass {
 		pas.setVisible(true);
 		est.setVisible(true);
 		bal.setVisible(true);
+		pat.setVisible(true);
+		labelAct.setVisible(true);
+		labelPas.setVisible(true);
+		labelPat.setVisible(true);
+		labelIng.setVisible(true);
+		labelGas.setVisible(true);
 
 		periodo.setVisible(true);
 		periodo1.setVisible(true);
 		nombreEmpresa1.setVisible(true);
 		nombreEmpresa.setVisible(true);
+		
+		
 	}
 
 	@FXML
@@ -188,6 +222,9 @@ public class ControllerClass {
 		periodo1.setVisible(false);
 		nombreEmpresa1.setVisible(false);
 		nombreEmpresa.setVisible(false);
+		gas.setVisible(false);
+		pat.setVisible(false);
+		ing.setVisible(false);
 
 		name.setVisible(true);
 		period.setVisible(true);
