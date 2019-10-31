@@ -241,12 +241,32 @@ public class ControllerClass {
 	private void print() {
 		String c = "";
 		String v = "";
+		String v2 = "";
+		
 		for (int i = 0; i < transacciones.getActivo().size(); i++) {
 			c += transacciones.getActivo().get(i).getNombre() + "\n";
 			v += transacciones.getActivo().get(i).getValor() + "\n";
 		}
+		for (int i = 0; i < transacciones.getGasto().size(); i++) {
+			c += transacciones.getGasto().get(i).getNombre() + "\n";
+			v += transacciones.getGasto().get(i).getValor() + "\n";
+		}
+		
+		for (int i = 0; i < transacciones.getPasivo().size(); i++) {
+			c += transacciones.getPasivo().get(i).getNombre() + "\n";
+			v2 += transacciones.getPasivo().get(i).getValor() + "\n";
+		}
+		for (int i = 0; i < transacciones.getPatrimonio().size(); i++) {
+			c += transacciones.getPatrimonio().get(i).getNombre() + "\n";
+			v2 += transacciones.getPatrimonio().get(i).getValor() + "\n";
+		}
+		for (int i = 0; i < transacciones.getIngreso().size(); i++) {
+			c += transacciones.getIngreso().get(i).getNombre() + "\n";
+			v2 += transacciones.getIngreso().get(i).getValor() + "\n";
+		}
+		
 		cuentas.setText(c);
 		actGas.setText(v);
-
+		paPatIng.setText(v2);
 	}
 }
