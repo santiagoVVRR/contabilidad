@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 import javafx.stage.StageStyle;
 import model.Transacciones;
 
@@ -48,17 +49,14 @@ public class ControllerClass {
     @FXML
     private Label pas;
 
-    @FXML
-    private Label labelAct;
+    
 
-    @FXML
-    private Label labelPas;
+  
 
     @FXML
     private Label pat;
 
-    @FXML
-    private Label labelPat;
+  
 
     @FXML
     private Label est;
@@ -75,11 +73,7 @@ public class ControllerClass {
     @FXML
     private Label gas;
 
-    @FXML
-    private Label labelIng;
-
-    @FXML
-    private Label labelGas;
+   
 
     @FXML
     private Button add;
@@ -111,6 +105,12 @@ public class ControllerClass {
     @FXML
     private Label periodo1;
 
+    @FXML
+    private GridPane gb;
+    
+    @FXML
+    private GridPane ge;
+    
 	@FXML
 	void AgregarInfo(ActionEvent event) {
 		if (period.getText() == null || name.getText() == null || period.getText().equalsIgnoreCase("")
@@ -184,6 +184,31 @@ public class ControllerClass {
 		valor.setText("");
 		nombre.setText("");
 		finish.setVisible(true);
+		
+		act.setVisible(true);
+		pas.setVisible(true);
+		est.setVisible(true);
+		bal.setVisible(true);
+		pat.setVisible(true);
+		//labelAct.setVisible(true);
+		//labelPas.setVisible(true);
+		//labelPat.setVisible(true);
+		//labelIng.setVisible(true);
+		//labelGas.setVisible(true);
+
+		periodo.setVisible(true);
+		periodo1.setVisible(true);
+		nombreEmpresa1.setVisible(true);
+		nombreEmpresa.setVisible(true);
+		
+		gb = new GridPane();
+		ge = new GridPane();
+		
+		
+		double v = Integer.parseInt(valor.getText());
+		Label ac = new Label();
+		ac.setText(nombre.getText() + v );
+		gb.add(ac, 0, 0);
 	}
 
 	@FXML
@@ -193,17 +218,24 @@ public class ControllerClass {
 		est.setVisible(true);
 		bal.setVisible(true);
 		pat.setVisible(true);
-		labelAct.setVisible(true);
-		labelPas.setVisible(true);
-		labelPat.setVisible(true);
-		labelIng.setVisible(true);
-		labelGas.setVisible(true);
+		//labelAct.setVisible(true);
+		//labelPas.setVisible(true);
+		//labelPat.setVisible(true);
+		//labelIng.setVisible(true);
+		//labelGas.setVisible(true);
 
 		periodo.setVisible(true);
 		periodo1.setVisible(true);
 		nombreEmpresa1.setVisible(true);
 		nombreEmpresa.setVisible(true);
 		
+		gb = new GridPane();
+		ge = new GridPane();
+		
+		
+		Label labelAct = new Label(nombre.getText());
+		gb.add(labelAct, 0, 0);
+			
 		
 	}
 

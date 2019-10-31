@@ -5,7 +5,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass">
    <children>
@@ -20,24 +22,10 @@
          <children>
             <Label fx:id="act" layoutX="35.0" layoutY="23.0" text="Activos" />
             <Label fx:id="pas" layoutX="295.0" layoutY="23.0" text="Pasivos" />
-            <Label fx:id="labelAct" layoutX="40.0" layoutY="68.0" />
-            <Label fx:id="labelPas" layoutX="300.0" layoutY="60.0" />
             <Label fx:id="pat" layoutX="455.0" layoutY="23.0" text="Patrimonio" />
-            <Label fx:id="labelPat" layoutX="456.0" layoutY="60.0" />
          </children>
       </Pane>
       <Separator layoutX="6.0" layoutY="144.0" prefHeight="2.0" prefWidth="542.0" />
-      <Pane layoutX="12.0" layoutY="158.0" prefHeight="560.0" prefWidth="531.0">
-         <children>
-            <Label fx:id="est" layoutX="206.0" layoutY="31.0" text="ESTADO DE RESULTADOS" />
-            <Label fx:id="nombreEmpresa" layoutX="206.0" layoutY="14.0" />
-            <Label fx:id="periodo" layoutX="206.0" layoutY="48.0" />
-            <Label fx:id="ing" layoutX="54.0" layoutY="90.0" text="Ingresos" />
-            <Label fx:id="gas" layoutX="390.0" layoutY="90.0" text="Gastos" />
-            <Label fx:id="labelIng" layoutX="62.0" layoutY="128.0" />
-            <Label fx:id="labelGas" layoutX="394.0" layoutY="128.0" />
-         </children>
-      </Pane>
       <Button fx:id="add" layoutX="143.0" layoutY="112.0" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
       <Separator layoutX="312.0" layoutY="10.0" orientation="VERTICAL" prefHeight="133.0" prefWidth="6.0" />
       <TextField fx:id="name" layoutX="439.0" layoutY="15.0" prefHeight="25.0" prefWidth="104.0" />
@@ -49,5 +37,21 @@
       <Button fx:id="finish" layoutX="218.0" layoutY="112.0" mnemonicParsing="false" onAction="#terminar" text="Terminar" />
       <Button fx:id="addInf" layoutX="419.0" layoutY="101.0" mnemonicParsing="false" onAction="#AgregarInfo" text="Agregar" />
       <Label fx:id="periodo1" layoutX="889.0" layoutY="45.0" prefHeight="17.0" prefWidth="104.0" />
+      <BorderPane layoutX="8.0" layoutY="151.0" prefHeight="376.0" prefWidth="531.0">
+         <top>
+            <Pane prefHeight="185.0" prefWidth="531.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="est" layoutX="206.0" layoutY="31.0" text="ESTADO DE RESULTADOS" />
+                  <Label fx:id="nombreEmpresa" layoutX="206.0" layoutY="14.0" />
+                  <Label fx:id="periodo" layoutX="206.0" layoutY="48.0" />
+                  <Label fx:id="ing" layoutX="54.0" layoutY="90.0" text="Ingresos" />
+                  <Label fx:id="gas" layoutX="390.0" layoutY="90.0" text="Gastos" />
+               </children>
+            </Pane>
+         </top>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
    </children>
 </Pane>
