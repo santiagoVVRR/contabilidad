@@ -5,79 +5,38 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="1242.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="938.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ControllerClass">
    <children>
-      <Label fx:id="tres" layoutX="14.0" layoutY="10.0" text="Nombre de la cuenta" />
-      <Label fx:id="cuatro" layoutX="94.0" layoutY="45.0" text="Valor" />
-      <Label fx:id="cinco" layoutX="55.0" layoutY="80.0" text="Tipo de cuenta" />
-      <TextField fx:id="nombre" layoutX="144.0" layoutY="6.0" />
-      <TextField fx:id="valor" layoutX="144.0" layoutY="41.0" />
-      <ComboBox fx:id="tipo" layoutX="143.0" layoutY="76.0" prefWidth="150.0" />
-      <Separator layoutX="552.0" layoutY="12.0" orientation="VERTICAL" prefHeight="635.0" prefWidth="6.0" />
-      <Pane layoutX="575.0" layoutY="60.0" prefHeight="584.0" prefWidth="619.0">
+      <Label fx:id="tres" layoutX="14.0" layoutY="165.0" text="Nombre de la cuenta" />
+      <Label fx:id="cuatro" layoutX="94.0" layoutY="202.0" text="Valor" />
+      <Label fx:id="cinco" layoutX="43.0" layoutY="235.0" text="Tipo de cuenta" />
+      <TextField fx:id="nombre" layoutX="139.0" layoutY="161.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="valor" layoutX="139.0" layoutY="198.0" prefHeight="25.0" prefWidth="150.0" />
+      <ComboBox fx:id="tipo" layoutX="138.0" layoutY="231.0" prefWidth="150.0" />
+      <Separator layoutX="313.0" layoutY="13.0" orientation="VERTICAL" prefHeight="635.0" prefWidth="6.0" />
+      <Pane layoutX="334.0" layoutY="63.0" prefHeight="538.0" prefWidth="587.0">
          <children>
-            <Label fx:id="act" layoutX="35.0" layoutY="23.0" text="Activos" />
-<<<<<<< HEAD
-            <Label fx:id="pas" layoutX="343.0" layoutY="23.0" text="Pasivos" />
-            <Label fx:id="pat" layoutX="343.0" layoutY="60.0" text="Patrimonio" />
-            <Label fx:id="pat1" layoutX="343.0" layoutY="96.0" text="Pasivo + Patrimonio" />
-            <Label fx:id="activos" layoutX="145.0" layoutY="23.0" />
-            <Label fx:id="pasivos" layoutX="503.0" layoutY="23.0" prefHeight="17.0" prefWidth="79.0" textAlignment="RIGHT" />
-            <Label fx:id="patrimonio" layoutX="503.0" layoutY="60.0" prefHeight="17.0" prefWidth="79.0" textAlignment="RIGHT" />
-            <Label fx:id="pasivospatrimonio" layoutX="503.0" layoutY="96.0" prefHeight="17.0" prefWidth="79.0" />
+            <Label fx:id="act" layoutX="32.0" layoutY="15.0" text="Cuenta" />
+            <Label fx:id="pas" layoutX="283.0" layoutY="15.0" text="Activos+Gastos" />
+            <Label fx:id="pat" layoutX="425.0" layoutY="15.0" text="Pasivo+Patrimonio+Ingreso" />
+            <Label fx:id="cuentas" layoutX="14.0" layoutY="40.0" prefHeight="17.0" prefWidth="200.0" />
+            <Label fx:id="actGas" layoutX="274.0" layoutY="40.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
+            <Label fx:id="paPatIng" layoutX="449.0" layoutY="40.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
          </children>
       </Pane>
-      <Separator layoutX="6.0" layoutY="144.0" prefHeight="2.0" prefWidth="542.0" />
-      <Pane layoutX="12.0" layoutY="212.0" prefHeight="436.0" prefWidth="531.0">
-         <children>
-            <Label fx:id="ing" layoutX="30.0" layoutY="14.0" prefHeight="17.0" prefWidth="48.0" text="Ingresos" />
-            <Label fx:id="gas" layoutX="30.0" layoutY="38.0" prefHeight="17.0" prefWidth="38.0" text="Gastos" />
-            <Label fx:id="gas1" layoutX="30.0" layoutY="67.0" prefHeight="17.0" prefWidth="48.0" text="Utilidad" />
-            <Label fx:id="ingresos" layoutX="146.0" layoutY="14.0" prefHeight="17.0" prefWidth="106.0" textAlignment="RIGHT" />
-            <Label fx:id="gastos" layoutX="146.0" layoutY="38.0" prefHeight="17.0" prefWidth="106.0" textAlignment="RIGHT" />
-            <Label fx:id="utilidad" layoutX="146.0" layoutY="67.0" prefHeight="17.0" prefWidth="106.0" textAlignment="RIGHT" />
-         </children>
-      </Pane>
-=======
-            <Label fx:id="pas" layoutX="295.0" layoutY="23.0" text="Pasivos" />
-            <Label fx:id="pat" layoutX="455.0" layoutY="23.0" text="Patrimonio" />
-         </children>
-      </Pane>
-      <Separator layoutX="6.0" layoutY="144.0" prefHeight="2.0" prefWidth="542.0" />
->>>>>>> 081dd4e8eceb604e14ecd009b210a83d07bb1dfb
-      <Button fx:id="add" layoutX="143.0" layoutY="112.0" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
-      <Separator layoutX="312.0" layoutY="10.0" orientation="VERTICAL" prefHeight="133.0" prefWidth="6.0" />
-      <TextField fx:id="name" layoutX="439.0" layoutY="15.0" prefHeight="25.0" prefWidth="104.0" />
-      <Label fx:id="dos" layoutX="318.0" layoutY="12.0" text="Nombre de Empresa" />
-      <Label fx:id="uno" layoutX="385.0" layoutY="54.0" text="Periodo" />
-      <TextField fx:id="period" layoutX="439.0" layoutY="50.0" prefHeight="25.0" prefWidth="104.0" />
-      <Label fx:id="bal" layoutX="834.0" layoutY="6.0" prefHeight="50.0" prefWidth="150.0" text="BALANCE GENERAL" textAlignment="CENTER" />
-      <Button fx:id="finish" layoutX="218.0" layoutY="112.0" mnemonicParsing="false" onAction="#terminar" text="Terminar" />
-      <Button fx:id="addInf" layoutX="419.0" layoutY="101.0" mnemonicParsing="false" onAction="#AgregarInfo" text="Agregar" />
-<<<<<<< HEAD
-      <Label fx:id="est" layoutX="209.0" layoutY="147.0" prefHeight="50.0" prefWidth="150.0" text="ESTADO DE RESULTADOS" textAlignment="CENTER" />
-=======
-      <Label fx:id="periodo1" layoutX="889.0" layoutY="45.0" prefHeight="17.0" prefWidth="104.0" />
-      <BorderPane layoutX="8.0" layoutY="151.0" prefHeight="376.0" prefWidth="531.0">
-         <top>
-            <Pane prefHeight="185.0" prefWidth="531.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Label fx:id="est" layoutX="206.0" layoutY="31.0" text="ESTADO DE RESULTADOS" />
-                  <Label fx:id="nombreEmpresa" layoutX="206.0" layoutY="14.0" />
-                  <Label fx:id="periodo" layoutX="206.0" layoutY="48.0" />
-                  <Label fx:id="ing" layoutX="54.0" layoutY="90.0" text="Ingresos" />
-                  <Label fx:id="gas" layoutX="390.0" layoutY="90.0" text="Gastos" />
-               </children>
-            </Pane>
-         </top>
-         <center>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-         </center>
-      </BorderPane>
->>>>>>> 081dd4e8eceb604e14ecd009b210a83d07bb1dfb
+      <Separator layoutX="6.0" layoutY="144.0" prefHeight="5.0" prefWidth="310.0" />
+      <Button fx:id="add" layoutX="134.0" layoutY="273.0" mnemonicParsing="false" onAction="#agregar" text="Agregar" />
+      <TextField fx:id="name" layoutX="141.0" layoutY="19.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label fx:id="dos" layoutX="15.0" layoutY="19.0" text="Nombre de Empresa" />
+      <Label fx:id="uno" layoutX="87.0" layoutY="63.0" text="Periodo" />
+      <TextField fx:id="period" layoutX="141.0" layoutY="59.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label fx:id="bal" layoutX="553.0" layoutY="11.0" prefHeight="50.0" prefWidth="150.0" text="BALANCE GENERAL" textAlignment="CENTER" />
+      <Button fx:id="finish" layoutX="213.0" layoutY="273.0" mnemonicParsing="false" onAction="#terminar" text="Terminar" />
+      <Button fx:id="addInf" layoutX="184.0" layoutY="99.0" mnemonicParsing="false" onAction="#AgregarInfo" text="Agregar" />
+      <Label fx:id="sumas" layoutX="419.0" layoutY="623.0" prefHeight="17.0" prefWidth="100.0" text="SUMAS IGUALES" textAlignment="RIGHT" />
+      <Label fx:id="activoGasto" layoutX="628.0" layoutY="623.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
+      <Label fx:id="patrimonioPasivoIngreso" layoutX="778.0" layoutY="623.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
    </children>
 </Pane>
