@@ -59,8 +59,6 @@ public class Transacciones {
 		this.gasto = gasto;
 	}
 
-	
-	
 	public void addTransaction(double value, String type, String name) {
 		Cuenta temp = new Cuenta(name, value);
 
@@ -82,73 +80,101 @@ public class Transacciones {
 				}
 			}
 		} else if (type.equalsIgnoreCase("pasivo")) {
-			if(pasivo.isEmpty()) {
+			if (pasivo.isEmpty()) {
 				pasivo.add(temp);
-			}else {
+			} else {
 				boolean is = false;
-				for(int i = 0; i < pasivo.size() && !is; i++) {
-					if(name.equalsIgnoreCase(pasivo.get(i).getNombre())) {
+				for (int i = 0; i < pasivo.size() && !is; i++) {
+					if (name.equalsIgnoreCase(pasivo.get(i).getNombre())) {
 						is = true;
 						double v = pasivo.get(i).getValor() + value;
 						pasivo.get(i).setValor(v);
 					}
 				}
-				if(!is) {
+				if (!is) {
 					pasivo.add(temp);
 				}
 			}
-			
+
 		} else if (type.equalsIgnoreCase("patrimonio")) {
-			if(patrimonio.isEmpty()) {
+			if (patrimonio.isEmpty()) {
 				patrimonio.add(temp);
-			}else {
+			} else {
 				boolean is = false;
-				for(int i = 0; i < patrimonio.size() && !is; i++) {
-					if(name.equalsIgnoreCase(patrimonio.get(i).getNombre())) {
+				for (int i = 0; i < patrimonio.size() && !is; i++) {
+					if (name.equalsIgnoreCase(patrimonio.get(i).getNombre())) {
 						is = true;
 						double v = patrimonio.get(i).getValor() + value;
 						patrimonio.get(i).setValor(v);
 					}
 				}
-				if(!is) {
+				if (!is) {
 					patrimonio.add(temp);
 				}
 			}
 
 		} else if (type.equalsIgnoreCase("ingreso")) {
-			if(ingreso.isEmpty()) {
+			if (ingreso.isEmpty()) {
 				ingreso.add(temp);
-			}else {
+			} else {
 				boolean is = false;
-				for(int i = 0; i < ingreso.size() && !is; i++) {
-					if(name.equalsIgnoreCase(ingreso.get(i).getNombre())) {
+				for (int i = 0; i < ingreso.size() && !is; i++) {
+					if (name.equalsIgnoreCase(ingreso.get(i).getNombre())) {
 						is = true;
 						double v = ingreso.get(i).getValor() + value;
 						ingreso.get(i).setValor(v);
 					}
 				}
-				if(!is) {
+				if (!is) {
 					ingreso.add(temp);
 				}
 			}
 
 		} else if (type.equalsIgnoreCase("gasto")) {
-			if(gasto.isEmpty()) {
+			if (gasto.isEmpty()) {
 				gasto.add(temp);
-			}else {
+			} else {
 				boolean is = false;
-				for(int i = 0; i < gasto.size() && !is; i++) {
-					if(name.equalsIgnoreCase(gasto.get(i).getNombre())) {
+				for (int i = 0; i < gasto.size() && !is; i++) {
+					if (name.equalsIgnoreCase(gasto.get(i).getNombre())) {
 						is = true;
 						double v = gasto.get(i).getValor() + value;
 						gasto.get(i).setValor(v);
 					}
 				}
-				if(!is) {
+				if (!is) {
 					gasto.add(temp);
 				}
 			}
 
 		}
+	}
+
+	public double summer(String cuenta) {
+		double tmp = 0.0;
+
+		if (cuenta.equalsIgnoreCase("Activo")) {
+			for (int i = 0; i < activo.size(); i++) {
+				tmp += activo.get(i).getValor();
+			}
+		} else if (cuenta.equalsIgnoreCase("pasivo")) {
+			for (int i = 0; i < pasivo.size(); i++) {
+				tmp += pasivo.get(i).getValor();
+			}
+		} else if (cuenta.equalsIgnoreCase("patrimonio")) {
+			for (int i = 0; i < patrimonio.size(); i++) {
+				tmp += patrimonio.get(i).getValor();
+			}
+		} else if (cuenta.equalsIgnoreCase("ingreso")) {
+			for (int i = 0; i < ingreso.size(); i++) {
+				tmp += ingreso.get(i).getValor();
+			}
+		} else {
+			for (int i = 0; i < gasto.size(); i++) {
+				tmp += gasto.get(i).getValor();
+			}
+		}
+		
+		return tmp;
 	}
 }

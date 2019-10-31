@@ -18,92 +18,112 @@ public class ControllerClass {
 
 	private Transacciones transacciones;
 
+	@FXML
+	private ResourceBundle resources;
 
-    @FXML
-    private ResourceBundle resources;
+	@FXML
+	private URL location;
 
-    @FXML
-    private URL location;
+	@FXML
+	private Label tres;
 
-    @FXML
-    private Label tres;
+	@FXML
+	private Label cuatro;
 
-    @FXML
-    private Label cuatro;
+	@FXML
+	private Label cinco;
 
-    @FXML
-    private Label cinco;
+	@FXML
+	private TextField nombre;
 
-    @FXML
-    private TextField nombre;
+	@FXML
+	private TextField valor;
 
-    @FXML
-    private TextField valor;
+	@FXML
+	private ComboBox<String> tipo;
 
-    @FXML
-    private ComboBox<String> tipo;
+	@FXML
+	private Label act;
 
-    @FXML
-    private Label act;
+	@FXML
+	private Label pas;
 
-    @FXML
-    private Label pas;
+<<<<<<< HEAD
+	@FXML
+	private Label pat;
 
+	@FXML
+	private Label pat1;
+=======
     
 
   
+>>>>>>> 081dd4e8eceb604e14ecd009b210a83d07bb1dfb
 
-    @FXML
-    private Label pat;
+	@FXML
+	private Label activos;
 
+<<<<<<< HEAD
+	@FXML
+	private Label pasivos;
+=======
   
+>>>>>>> 081dd4e8eceb604e14ecd009b210a83d07bb1dfb
 
-    @FXML
-    private Label est;
+	@FXML
+	private Label patrimonio;
 
-    @FXML
-    private Label nombreEmpresa;
+	@FXML
+	private Label pasivospatrimonio;
 
-    @FXML
-    private Label periodo;
+	@FXML
+	private Label ing;
 
-    @FXML
-    private Label ing;
+	@FXML
+	private Label gas;
 
-    @FXML
-    private Label gas;
+	@FXML
+	private Label gas1;
 
+<<<<<<< HEAD
+	@FXML
+	private Label ingresos;
+
+	@FXML
+	private Label gastos;
+=======
    
+>>>>>>> 081dd4e8eceb604e14ecd009b210a83d07bb1dfb
 
-    @FXML
-    private Button add;
+	@FXML
+	private Label utilidad;
 
-    @FXML
-    private TextField name;
+	@FXML
+	private Button add;
 
-    @FXML
-    private Label dos;
+	@FXML
+	private TextField name;
 
-    @FXML
-    private Label uno;
+	@FXML
+	private Label dos;
 
-    @FXML
-    private TextField period;
+	@FXML
+	private Label uno;
 
-    @FXML
-    private Label bal;
+	@FXML
+	private TextField period;
 
-    @FXML
-    private Label nombreEmpresa1;
+	@FXML
+	private Label bal;
 
-    @FXML
-    private Button finish;
+	@FXML
+	private Button finish;
 
-    @FXML
-    private Button addInf;
+	@FXML
+	private Button addInf;
 
-    @FXML
-    private Label periodo1;
+	@FXML
+	private Label est;
 
     @FXML
     private GridPane gb;
@@ -142,10 +162,6 @@ public class ControllerClass {
 			uno.setVisible(false);
 			dos.setVisible(false);
 
-			periodo.setText(period.getText());
-			periodo1.setText(period.getText());
-			nombreEmpresa1.setText(name.getText());
-			nombreEmpresa.setText(name.getText());
 		}
 	}
 
@@ -163,14 +179,14 @@ public class ControllerClass {
 			try {
 				double value = Integer.parseInt(valor.getText());
 				transacciones.addTransaction(value, tipo.getValue(), nombre.getText());
-				
+
 				Alert info = new Alert(AlertType.INFORMATION);
 				info.setTitle("ADDED");
 				info.setHeaderText(null);
 				info.initStyle(StageStyle.UTILITY);
 				info.setContentText("the transaction has been added");
 				info.show();
-				
+
 			} catch (NumberFormatException e) {
 				Alert info = new Alert(AlertType.ERROR);
 				info.setTitle("ERROR");
@@ -178,9 +194,16 @@ public class ControllerClass {
 				info.initStyle(StageStyle.UTILITY);
 				info.setContentText("The value must be a number");
 				info.show();
+			} catch (NullPointerException e) {
+				Alert info = new Alert(AlertType.ERROR);
+				info.setTitle("ERROR");
+				info.setHeaderText(null);
+				info.initStyle(StageStyle.UTILITY);
+				info.setContentText("Select an account type");
+				info.show();
 			}
 		}
-		
+
 		valor.setText("");
 		nombre.setText("");
 		finish.setVisible(true);
@@ -215,9 +238,31 @@ public class ControllerClass {
 	void terminar(ActionEvent event) {
 		act.setVisible(true);
 		pas.setVisible(true);
+
+		est.setText(name.getText() + "\n" + "ESTADO DE RESULTADOS\n" + period.getText());
+		bal.setText(name.getText() + "\n" + "BALANCE GENERAL\n" + period.getText());
+
 		est.setVisible(true);
 		bal.setVisible(true);
+		
+		summer();
+		
 		pat.setVisible(true);
+<<<<<<< HEAD
+		gas1.setVisible(true);
+		pat1.setVisible(true);
+		tipo.setDisable(true);
+		valor.setDisable(true);
+		nombre.setDisable(true);
+		gas.setVisible(true);
+		ing.setVisible(true);
+		
+		tres.setVisible(false);
+		cuatro.setVisible(false);
+		cinco.setVisible(false);
+		add.setDisable(true);
+
+=======
 		//labelAct.setVisible(true);
 		//labelPas.setVisible(true);
 		//labelPat.setVisible(true);
@@ -236,6 +281,7 @@ public class ControllerClass {
 		Label labelAct = new Label(nombre.getText());
 		gb.add(labelAct, 0, 0);
 			
+>>>>>>> 081dd4e8eceb604e14ecd009b210a83d07bb1dfb
 		
 	}
 
@@ -250,13 +296,11 @@ public class ControllerClass {
 		pas.setVisible(false);
 		est.setVisible(false);
 		bal.setVisible(false);
-		periodo.setVisible(false);
-		periodo1.setVisible(false);
-		nombreEmpresa1.setVisible(false);
-		nombreEmpresa.setVisible(false);
 		gas.setVisible(false);
 		pat.setVisible(false);
 		ing.setVisible(false);
+		gas1.setVisible(false);
+		pat1.setVisible(false);
 
 		name.setVisible(true);
 		period.setVisible(true);
@@ -268,5 +312,22 @@ public class ControllerClass {
 		cinco.setVisible(false);
 
 		transacciones = new Transacciones();
+	}
+
+	private void summer() {
+		double activs = transacciones.summer("activo");
+		double pasivs = transacciones.summer("pasivo");
+		double patrimono = transacciones.summer("patrimonio");
+		double ingreso = transacciones.summer("ingreso");
+		double gasto = transacciones.summer("gasto");
+
+		activos.setText(activs + "");
+		pasivos.setText(pasivs + "");
+		patrimonio.setText(patrimono + "");
+		ingresos.setText(ingreso + "");
+		gastos.setText(gasto + "");
+
+		pasivospatrimonio.setText((pasivs + patrimono) + "");
+		utilidad.setText((ingreso - gasto) + "");
 	}
 }
