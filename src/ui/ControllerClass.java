@@ -16,81 +16,81 @@ import model.Transacciones;
 public class ControllerClass {
 
 	private Transacciones transacciones;
-	
+
 	@FXML
-    private ResourceBundle resources;
+	private ResourceBundle resources;
 
-    @FXML
-    private URL location;
+	@FXML
+	private URL location;
 
-    @FXML
-    private Label tres;
+	@FXML
+	private Label tres;
 
-    @FXML
-    private Label cuatro;
+	@FXML
+	private Label cuatro;
 
-    @FXML
-    private Label cinco;
+	@FXML
+	private Label cinco;
 
-    @FXML
-    private TextField nombre;
+	@FXML
+	private TextField nombre;
 
-    @FXML
-    private TextField valor;
+	@FXML
+	private TextField valor;
 
-    @FXML
-    private ComboBox<String> tipo;
+	@FXML
+	private ComboBox<String> tipo;
 
-    @FXML
-    private Label act;
+	@FXML
+	private Label act;
 
-    @FXML
-    private Label pas;
+	@FXML
+	private Label pas;
 
-    @FXML
-    private Label pat;
+	@FXML
+	private Label pat;
 
-    @FXML
-    private Label cuentas;
+	@FXML
+	private Label cuentas;
 
-    @FXML
-    private Label actGas;
+	@FXML
+	private Label actGas;
 
-    @FXML
-    private Label paPatIng;
+	@FXML
+	private Label paPatIng;
 
-    @FXML
-    private Button add;
+	@FXML
+	private Button add;
 
-    @FXML
-    private TextField name;
+	@FXML
+	private TextField name;
 
-    @FXML
-    private Label dos;
+	@FXML
+	private Label dos;
 
-    @FXML
-    private Label uno;
+	@FXML
+	private Label uno;
 
-    @FXML
-    private TextField period;
+	@FXML
+	private TextField period;
 
-    @FXML
-    private Label bal;
+	@FXML
+	private Label bal;
 
-    @FXML
-    private Button finish;
+	@FXML
+	private Button finish;
 
-    @FXML
-    private Button addInf;
+	@FXML
+	private Button addInf;
 
-    @FXML
-    private Label sumas;
+	@FXML
+	private Label sumas;
 
-    @FXML
-    private Label activoGasto;
+	@FXML
+	private Label activoGasto;
 
-    @FXML
-    private Label patrimonioPasivoIngreso;
+	@FXML
+	private Label patrimonioPasivoIngreso;
 
 	@FXML
 	void AgregarInfo(ActionEvent event) {
@@ -198,6 +198,8 @@ public class ControllerClass {
 		cinco.setVisible(false);
 		add.setDisable(true);
 		finish.setDisable(true);
+
+		print();
 	}
 
 	@FXML
@@ -234,5 +236,17 @@ public class ControllerClass {
 
 		activoGasto.setText((activs + gasto) + "");
 		patrimonioPasivoIngreso.setText((pasivs + patrimono + ingreso) + "");
+	}
+
+	private void print() {
+		String c = "";
+		String v = "";
+		for (int i = 0; i < transacciones.getActivo().size(); i++) {
+			c += transacciones.getActivo().get(i).getNombre() + "\n";
+			v += transacciones.getActivo().get(i).getValor() + "\n";
+		}
+		cuentas.setText(c);
+		actGas.setText(v);
+
 	}
 }

@@ -6,10 +6,8 @@ public class Cuenta {
 	private double valor;
 
 	public Cuenta(String nombre, double valor) {
-
 		this.setNombre(nombre);
 		this.setValor(valor);
-
 	}
 
 	public String getNombre() {

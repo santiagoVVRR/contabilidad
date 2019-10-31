@@ -21,9 +21,9 @@
             <Label fx:id="act" layoutX="32.0" layoutY="15.0" text="Cuenta" />
             <Label fx:id="pas" layoutX="283.0" layoutY="15.0" text="Activos+Gastos" />
             <Label fx:id="pat" layoutX="425.0" layoutY="15.0" text="Pasivo+Patrimonio+Ingreso" />
-            <Label fx:id="cuentas" layoutX="14.0" layoutY="40.0" prefHeight="17.0" prefWidth="200.0" />
-            <Label fx:id="actGas" layoutX="274.0" layoutY="40.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
-            <Label fx:id="paPatIng" layoutX="449.0" layoutY="40.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
+            <Label fx:id="cuentas" layoutX="32.0" layoutY="40.0" />
+            <Label fx:id="actGas" layoutX="285.0" layoutY="40.0" textAlignment="RIGHT" />
+            <Label fx:id="paPatIng" layoutX="426.0" layoutY="40.0" textAlignment="RIGHT" />
          </children>
       </Pane>
       <Separator layoutX="6.0" layoutY="144.0" prefHeight="5.0" prefWidth="310.0" />
@@ -35,8 +35,8 @@
       <Label fx:id="bal" layoutX="553.0" layoutY="11.0" prefHeight="50.0" prefWidth="150.0" text="BALANCE GENERAL" textAlignment="CENTER" />
       <Button fx:id="finish" layoutX="213.0" layoutY="273.0" mnemonicParsing="false" onAction="#terminar" text="Terminar" />
       <Button fx:id="addInf" layoutX="184.0" layoutY="99.0" mnemonicParsing="false" onAction="#AgregarInfo" text="Agregar" />
+      <Label fx:id="activoGasto" layoutX="620.0" layoutY="623.0" />
+      <Label fx:id="patrimonioPasivoIngreso" layoutX="760.0" layoutY="623.0" />
       <Label fx:id="sumas" layoutX="419.0" layoutY="623.0" prefHeight="17.0" prefWidth="100.0" text="SUMAS IGUALES" textAlignment="RIGHT" />
-      <Label fx:id="activoGasto" layoutX="628.0" layoutY="623.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
-      <Label fx:id="patrimonioPasivoIngreso" layoutX="778.0" layoutY="623.0" prefHeight="17.0" prefWidth="100.0" textAlignment="RIGHT" />
    </children>
 </Pane>

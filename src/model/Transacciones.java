@@ -150,8 +150,8 @@ public class Transacciones {
 		}
 	}
 
-	public double summer(String cuenta) {
-		double tmp = 0.0;
+	public long summer(String cuenta) {
+		long tmp = 0;
 
 		if (cuenta.equalsIgnoreCase("Activo")) {
 			for (int i = 0; i < activo.size(); i++) {
