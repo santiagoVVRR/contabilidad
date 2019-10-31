@@ -244,23 +244,28 @@ public class ControllerClass {
 		String v2 = "";
 		
 		for (int i = 0; i < transacciones.getActivo().size(); i++) {
+			v2 += " \n";
 			c += transacciones.getActivo().get(i).getNombre() + "\n";
 			v += transacciones.getActivo().get(i).getValor() + "\n";
 		}
 		for (int i = 0; i < transacciones.getGasto().size(); i++) {
+			v2 += " \n";
 			c += transacciones.getGasto().get(i).getNombre() + "\n";
 			v += transacciones.getGasto().get(i).getValor() + "\n";
 		}
 		
 		for (int i = 0; i < transacciones.getPasivo().size(); i++) {
+			v += " \n";
 			c += transacciones.getPasivo().get(i).getNombre() + "\n";
 			v2 += transacciones.getPasivo().get(i).getValor() + "\n";
 		}
 		for (int i = 0; i < transacciones.getPatrimonio().size(); i++) {
+			v += " \n";
 			c += transacciones.getPatrimonio().get(i).getNombre() + "\n";
 			v2 += transacciones.getPatrimonio().get(i).getValor() + "\n";
 		}
 		for (int i = 0; i < transacciones.getIngreso().size(); i++) {
+			v += " \n";
 			c += transacciones.getIngreso().get(i).getNombre() + "\n";
 			v2 += transacciones.getIngreso().get(i).getValor() + "\n";
 		}
