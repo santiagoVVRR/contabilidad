@@ -179,8 +179,42 @@ public class ControllerClass {
 	    @FXML
 	    void editar(ActionEvent event) {
 	    	
-	    	double v = Integer.parseInt(valor.getText());
-	    	transacciones.edit(tipo.getValue(), nombre.getText(), v);
+	    	if (nombre.getText() == null || valor.getText() == null || nombre.getText().equalsIgnoreCase("")
+					|| valor.getText().equalsIgnoreCase("") || tipo.getItems().isEmpty() || tipo == null) {
+				Alert info = new Alert(AlertType.ERROR);
+				info.setTitle("ERROR");
+				info.setHeaderText(null);
+				info.initStyle(StageStyle.UTILITY);
+				info.setContentText("please select a valid values");
+				info.show();
+			} else {
+				try {
+					double v = Integer.parseInt(valor.getText());
+			    	transacciones.edit(tipo.getValue(), nombre.getText(), v);
+			    	
+			    	Alert info = new Alert(AlertType.INFORMATION);
+					info.setTitle("EDITED");
+					info.setHeaderText(null);
+					info.initStyle(StageStyle.UTILITY);
+					info.setContentText("La cuenta ha sido editada");
+					info.show();
+				}catch (NumberFormatException e) {
+					Alert info = new Alert(AlertType.ERROR);
+					info.setTitle("ERROR");
+					info.setHeaderText(null);
+					info.initStyle(StageStyle.UTILITY);
+					info.setContentText("The value must be a number");
+					info.show();
+				} catch (NullPointerException e) {
+					Alert info = new Alert(AlertType.ERROR);
+					info.setTitle("ERROR");
+					info.setHeaderText(null);
+					info.initStyle(StageStyle.UTILITY);
+					info.setContentText("Select an account type");
+					info.show();
+				}
+			}
+	    	
 	    	
 	    	valor.setText("");
 			nombre.setText("");
