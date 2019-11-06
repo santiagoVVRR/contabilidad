@@ -170,6 +170,26 @@ public class ControllerClass {
 		finish.setVisible(true);
 
 	}
+	
+	 @FXML
+	    void ajustes(ActionEvent event) {
+
+	    }
+
+	    @FXML
+	    void editar(ActionEvent event) {
+	    	
+	    	double v = Integer.parseInt(valor.getText());
+	    	transacciones.edit(tipo.getValue(), nombre.getText(), v);
+	    	
+	    	valor.setText("");
+			nombre.setText("");
+			finish.setVisible(true);
+			finish.setDisable(false);
+			
+			
+			
+	    }
 
 	@FXML
 	void terminar(ActionEvent event) {
@@ -189,9 +209,9 @@ public class ControllerClass {
 		summer();
 
 		pat.setVisible(true);
-		tipo.setDisable(true);
-		valor.setDisable(true);
-		nombre.setDisable(true);
+		//tipo.setDisable(true);
+		//valor.setDisable(true);
+		//nombre.setDisable(true);
 
 		tres.setVisible(false);
 		cuatro.setVisible(false);

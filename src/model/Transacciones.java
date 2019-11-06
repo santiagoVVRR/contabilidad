@@ -177,4 +177,50 @@ public class Transacciones {
 		
 		return tmp;
 	}
+	
+	public void edit(String type, String name, double value) {
+		Cuenta c = new Cuenta(name,value);
+		
+		if(type.equalsIgnoreCase("Activo")) {
+			boolean is = false;
+			for(int i = 0; i<activo.size() && !is; i++) {
+				if(name.equalsIgnoreCase(c.getNombre())) {
+					is = true;
+					activo.get(i).setValor(value);
+				}
+			}
+		}else if(type.equalsIgnoreCase("Pasivo")){
+			boolean is = false;
+			for(int i = 0; i<pasivo.size() && !is; i++) {
+				if(name.equalsIgnoreCase(c.getNombre())) {
+					is = true;
+					pasivo.get(i).setValor(value);
+				}
+			}
+		}else if(type.equalsIgnoreCase("Patrimonio")) {
+			boolean is = false;
+			for(int i = 0; i<patrimonio.size() && !is; i++) {
+				if(name.equalsIgnoreCase(c.getNombre())) {
+					is = true;
+					patrimonio.get(i).setValor(value);
+				}
+			}
+		}else if(type.equalsIgnoreCase("Ingreso")) {
+			boolean is = false;
+			for(int i = 0; i<ingreso.size() && !is; i++) {
+				if(name.equalsIgnoreCase(c.getNombre())) {
+					is = true;
+					ingreso.get(i).setValor(value);
+				}
+			}
+		}else if(type.equalsIgnoreCase("Gasto")) {
+			boolean is = false;
+			for(int i = 0; i<gasto.size() && !is; i++) {
+				if(name.equalsIgnoreCase(c.getNombre())) {
+					is = true;
+					gasto.get(i).setValor(value);
+				}
+			}
+		}
+	}
 }
